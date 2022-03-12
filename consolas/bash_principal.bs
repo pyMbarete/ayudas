@@ -1,0 +1,43 @@
+#!/bin/bash
+#Importamos las variables dentro del archivo 'info'
+echo "$fuente/info"
+declare -A info
+while IFS=: read -r var valor;do
+    info[$var]="$valor"
+done < "$fuente/info"
+
+#importar funciones
+#Como ejemplo, si tienes un script llamado bash_modulo.bs.
+#Si lo quisieras utilizar en otro script, tienes que hacerlo tal y como ves a continuación,
+
+declare -A my_array
+principal='date'
+
+source ./$fuente/bash_modulo.bs
+
+
+git_add_commit_PUSH()
+{
+    echo Ejecutando: git status
+    git status
+
+    principal='git add -A'
+    my_array=()
+    super_comand 
+
+    principal='git commit'
+    my_array=([m]='"commit automatico desde linux bash"')
+    super_comand
+    #git commit -m "commit automatico desde linux bash"
+
+    principal='git push origin master'
+    my_array=()
+    super_comand 
+
+    principal='git status'
+    super_comand 
+
+    for i in ${!info[@]};do
+        echo "$i=${info[$i]}"
+    done
+}

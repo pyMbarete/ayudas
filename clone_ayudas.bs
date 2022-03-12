@@ -1,0 +1,35 @@
+#!/bin/bash
+#hacemos una copia del repositorio Nuestros
+git clone https://github.com/MbaretePythonPY/ayudas.git
+cd ayudas
+
+echo le sedimos los derechos de ejecucion a los script bash
+chmod +x push.bs
+
+echo agregamos un archivo al repositorio 'ayudas'
+echo "texto de prueba $(date)" > archivoDePrueba_$(whoami).txt
+echo agregamos los cambios con 'git add -A' y git para que les haga seguimiento 
+
+git add -A
+echo creamos un commit para luego subirlo a Github
+git commit -m "commit desde Linux $(whoami) $(date)"
+#deberia retornar algo parecido a las siguientes lineas
+    #[master 5185c78] commit desde LinuxLite
+    # 1 file changed, 0 insertions(+), 0 deletions(-)
+    # create mode 100644 archivo_de_pruebas.py
+
+echo ahora intentamos subir los cambios a github
+echo luego de este comando debes seleccionar "'Sign in with Browser'" que seria inicar con el Navegador, 
+echo luego inicias secion si hace falta
+git push origin master
+#deberia retornar algo parecido a las siguientes lineas
+    #info: please complete authentication in your browser...
+    #Enumerating objects: 4, done.
+    #Counting objects: 100% (4/4), done.
+    #Delta compression using up to 2 threads
+    #Compressing objects: 100% (2/2), done.
+    #Writing objects: 100% (3/3), 338 bytes | 112.00 KiB/s, done.
+    #Total 3 (delta 0), reused 0 (delta 0)
+    #To https://github.com/MbaretePythonPY/ayudas.git
+    #b4dbb2d..5185c78  master -> master
+echo felicidaddes ya puedes trabahar en este proyecto
