@@ -1,2 +1,3 @@
 # ayudas
-Repositorio para pasar codigos o proyectos de froma mas practica
+Repositorio para pasar codigos o proyectos de forma mas practica
+email: mathiaslucasvidipy@gmail.com
