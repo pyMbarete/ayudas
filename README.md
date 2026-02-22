@@ -1,3 +1,3 @@
 # ayudas
-Repositorio para compartir proyectos, o desafios
+Repositorio para compartir proyectos o ayudas
 email: mathiaslucasvidipy@gmail.com
